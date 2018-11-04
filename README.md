@@ -15,6 +15,8 @@ To run this program :
 * Django
 * HTML/CSS
 * Bootstrap
+## Known Bugs
+There is no known bug for now
 
 # BDD
 | Behavior            | Input                         | Output                        |
@@ -24,6 +26,11 @@ To run this program :
 | user can copy link to image | copy link to image | image will be copied to clip board|
 | user can seach photo by category | search category| photos of that category will be displayed |
 
+## Link to website
+[gallery](https://gallery-best.herokuapp.com/)
+
+## Contact Information
+you can contact me at abdirahmanmahat3@gmail.com
 
 
 # License
