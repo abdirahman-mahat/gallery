@@ -1,0 +1,30 @@
+.container {
+    border-radius: 2%;
+}
+
+.jumbotron {
+    width: 100%;
+}
+
+#display {
+    background: url(../img/tree.jpg);
+    background-size: cover;
+    height: 900px;
+}
+
+#display-text {
+    position: relative;
+    top: 100px;
+    opacity: 0.8;
+}
+
+#gallery_header_div{
+    height: 700px;
+    color: black;
+    padding-top: 600px;
+}
+
+#gallery {
+    background: url(../img/gallery.jpg);
+    background-size: cover;
+}

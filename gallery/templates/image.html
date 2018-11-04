@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container black white-text">
+        
+                   
+        <div class="row">
+                <h2 class="text-center col-xs-12">{{image.image_name}}</h2>
+        </div>
+
+        <div class="row">
+            <img src="{{image.photo.url}}"  class="img-responsive col-xs-12" alt="">
+        </div>
+
+        <br>
+           
+        <div class="row">
+            <div class="jumbotron white-text black">
+                <h2>Image Details</h2>
+                <br>
+                <h4>Caption: {{image.description}}</h4>
+                
+                <h4>Location: {{image.location}}</h4>
+
+                
+                <br><br><br>
+                <h4>Link to this Image:<span><input id="myInput" type="text" value="https://gallery-best.herokuapp.com/image/{{image.id}}"><a href="#" class="btn" onclick="myFunction()">copy</a></span></h4>
+            </div>
+        </div>
+
+
+</div>
+{% endblock %}
