@@ -67,10 +67,7 @@ class Image(models.Model):
         image = cls(name=name,description=description,location=location,category=category)
         image.save()
 
-    @classmethod
-    def get_image_by_id(cls, id):
-        image = cls.objects.get(pk=id)
-        return image
+
 
     @classmethod
     def filter_by_location(cls, location):
