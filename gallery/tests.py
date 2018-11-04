@@ -92,7 +92,7 @@ class ImageTestClass(TestCase):
         self.cat.save_category()
 
         #creating an new image 
-        self.image = Image(id='1', image_name='name', description = 'this photo', location=self.locale, category=self.cat, photo='test.jpg')
+        self.image = Image(id='1', image_name='name', description ='this photo', location=self.locale, photo='test.jpg')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image, Image))
@@ -139,10 +139,4 @@ class ImageTestClass(TestCase):
         image = Image.objects.filter(location=self.image.location)
         self.assertTrue(this_img, image)
 
-    def test_filter_by_category_name(self):
-        """
-        Function to test if you can get an image by its category name
-        """
-        self.image.save_image()
-        images = Image.search_image('this')
-        self.assertTrue(len(images)>0)
+   
