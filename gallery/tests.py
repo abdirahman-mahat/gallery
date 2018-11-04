@@ -27,6 +27,7 @@ class LocationTestClass(TestCase):
         Function to test that a location can be deleted
         """
         self.locale.save_location()
+        locations = Location.objects.all()
         self.locale.delete_location()
         self.assertTrue(len(locations) == 0)
     

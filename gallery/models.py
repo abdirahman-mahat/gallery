@@ -53,7 +53,7 @@ class Image(models.Model):
     def __str__(self):
         return self.image_name
     class Meta:
-        ordering = ['name']
+        ordering = ['image_name']
 
     def save_image(self):
         self.save()
