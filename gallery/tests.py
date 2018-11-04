@@ -9,7 +9,7 @@ class LocationTestClass(TestCase):
     """
     #Set up method
     def setUp(self):
-        self.locale = Location(location='uganda',)
+        self.locale = Location(id='1',location='uganda',)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.locale, Location))
@@ -47,7 +47,7 @@ class CategoryTestClass(TestCase):
     """
     #Set up method
     def setUp(self):
-        self.cat = Category(category='nature')
+        self.cat = Category(id='1',category='nature')
     #Testing instance
     def test_instance(self):
         self.assertTrue(isinstance(self.cat, Category))
@@ -92,7 +92,7 @@ class ImageTestClass(TestCase):
         self.cat.save_category()
 
         #creating an new image 
-        self.image = Image(photo='test.jpg', image_name='name', description = 'this photo', location=self.locale, category = self.cat)
+        self.image = Image(id='1', image_name='name', description = 'this photo', location=self.locale, category=self.cat, photo='test.jpg')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image, Image))
@@ -121,7 +121,14 @@ class ImageTestClass(TestCase):
         images = Image.objects.get(photo='manka.jpg')
         self.assertTrue(images.photo, 'manka.jpg')
 
-  
+    def test_get_image_by_id(self):
+        """
+        Function to test if you can get an image by its id
+        """
+        self.image.save_image()
+        this_img= self.image.get_image_by_id(self.image.id)
+        image = Image.objects.get(id=self.image.id)
+        self.assertTrue(this_img, image)
 
     def test_filter_by_location(self):
         """
@@ -132,4 +139,10 @@ class ImageTestClass(TestCase):
         image = Image.objects.filter(location=self.image.location)
         self.assertTrue(this_img, image)
 
-  
+    def test_filter_by_category_name(self):
+        """
+        Function to test if you can get an image by its category name
+        """
+        self.image.save_image()
+        images = Image.search_image('this')
+        self.assertTrue(len(images)>0)
