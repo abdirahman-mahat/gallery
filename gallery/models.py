@@ -48,7 +48,7 @@ class Image(models.Model):
     description = models.TextField()
     location = models.ForeignKey(Location)
     category = models.ManyToManyField(Category)
-    photo = models.ImageField(upload_to = 'articles/')
+    photo = models.ImageField(upload_to = 'images/')
 
     def __str__(self):
         return self.image_name
@@ -83,5 +83,5 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        images = cls.objects.filter(category__category=search_term)
+        images = cls.objects.filter(category__c1ategory=search_term)
         return images
