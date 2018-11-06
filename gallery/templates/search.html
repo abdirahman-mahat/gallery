@@ -16,6 +16,18 @@
             {% for image in images %}
                 <div class="col-sm-12 col-md-3">
                     <h1>{{image.image_name}}</h1>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                        <div class="card cardizo black">
+                                <div class="card-image">
+                                    <a class="white-text"  href="/image/{{image.id}}"><img src="{{image.photo.url}}"></a>
+                                </div>
+                                
+                              </div>
+    
+                    </div>
+                   
+
                 </div>
             {% endfor %}
         {% endif %}
